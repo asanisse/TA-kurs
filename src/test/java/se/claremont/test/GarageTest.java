@@ -27,9 +27,12 @@ public class GarageTest {
         Vehicle myVehicle2 = new Vehicle("Volvo", "V40");
         myVehicle2.setPrice(900);
         myGarage.parkVehicle(2,myVehicle2 );
-        Vehicle myVehicle3 = new Vehicle("Opel", "Omega");
-        myVehicle3.setPrice(800);
-        myGarage.parkVehicle(9,myVehicle2 );
+        Vehicle myVehicle3 = new Vehicle("Volvo", "V40");
+        myVehicle3.setPrice(700);
+        myGarage.parkVehicle(3,myVehicle3 );
+        Vehicle myVehicle4 = new Vehicle("Opel", "Omega");
+        myVehicle4.setPrice(800);
+        myGarage.parkVehicle(9,myVehicle4 );
         assertEquals(1, myGarage.getNumberOfCarsWithValueOver(1000));
 
     }
