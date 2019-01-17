@@ -28,7 +28,7 @@ public class GarageTest {
         myVehicle2.setPrice(900);
         myGarage.parkVehicle(2,myVehicle2 );
         Vehicle myVehicle3 = new Vehicle("Saab", "V50");
-        myVehicle3.setPrice(700);
+        myVehicle3.setPrice(750);
         myGarage.parkVehicle(3,myVehicle3 );
         Vehicle myVehicle4 = new Vehicle("Opel", "Omega");
         myVehicle4.setPrice(800);
