@@ -20,6 +20,10 @@ public class Vehicle {
         this.price = price;
     }
 
+    public void setMake(String make){this.make=make;}
+
+    public String getMake(){return make;}
+
     public void changeOwnership(String newOwner){
         owner=newOwner;
     }
