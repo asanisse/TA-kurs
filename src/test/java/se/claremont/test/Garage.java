@@ -16,8 +16,8 @@ public class Garage {
     }
 
     //En metod som flyttar en bil från en plats i garaget till en annan
-    public void moveCars(){
-
+    public void moveCars(int parkingSpace, Vehicle vehicle){
+        vehicles[parkingSpace] = vehicle;
     }
 
     public int getNumberOfCarsWithValueOver(int price) {
@@ -30,9 +30,9 @@ public class Garage {
         return numberOfCars;
     }
 
-    public int getMostExpensiveCar(int price){
+    public int getHighestPrice(int price){
         int highestPrice = 0;
-        for (int i = 0; i < vehicles.length -1; i++){
+        for (int i = 0; i <= vehicles.length -1; i++){
             if (vehicles[i] != null && vehicles[i].getPrice() > highestPrice) {
                 highestPrice= vehicles[i].getPrice();
 
@@ -40,4 +40,17 @@ public class Garage {
         } return highestPrice;
     }
 
+    public String getMostExpensiveVehicle(Vehicle tempVehicle){
+       // Vehicle tempVehicle = new Vehicle("Porsche", "Snabb");
+      //  tempVehicle.setPrice(100);
+
+        for (int i = 0; i <= vehicles.length -1; i++){
+            if (vehicles[i] != null && vehicles[i].getPrice() > tempVehicle.getPrice()) {
+                tempVehicle.setPrice(vehicles[i].getPrice());
+                tempVehicle.setMake(vehicles[i].getMake());
+                tempVehicle.setModel(vehicles[i].getModel());
+            }
+        }
+        return tempVehicle.getMake();
+    }
 }

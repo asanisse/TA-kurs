@@ -24,6 +24,9 @@ public class Vehicle {
 
     public String getMake(){return make;}
 
+    public void setModel(String model){this.model=model;}
+    public String getModel(){return model;}
+
     public void changeOwnership(String newOwner){
         owner=newOwner;
     }
