@@ -1,5 +1,7 @@
 package se.claremont.test;
 
+import java.util.Arrays;
+
 public class Garage {
     Vehicle[] vehicles = new Vehicle[10];
     String address;
@@ -37,6 +39,8 @@ public class Garage {
                 highestPrice= vehicles[i].getPrice();
 
             }
+          // System.out.println(Arrays.toString(vehicles));
+
         } return highestPrice;
     }
 

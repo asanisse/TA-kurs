@@ -2,6 +2,8 @@ package se.claremont.test;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.assertEquals;
 
 public class GarageTest {
@@ -100,6 +102,10 @@ public class GarageTest {
         myGarage.parkVehicle(9, myVehicle4);
 
         assertEquals(myVehicle2.getMake(), myGarage.getMostExpensiveVehicle(tempVehicle));
+            System.out.println("Test passed");
+
+
+
     }
 
     }
