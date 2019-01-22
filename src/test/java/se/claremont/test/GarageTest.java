@@ -77,7 +77,7 @@ public class GarageTest {
 
         assertEquals(myVehicle4.getPrice(),highestPrice);
     }
-
+    //Some comments
     @Test
     public void getMostExpensiveVehicleInGarage() {
 
