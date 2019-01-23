@@ -33,15 +33,10 @@ public class Garage {
             if (vehicles[i] != null && vehicles[i].getPrice() > price) {
                 numberOfCars++;
             }
-            //Överkurs Streams, för att iterera över en lista:
-     /*  return(int) Arrays.stream(vehicles)
-               .filter(vehicle->vehicle!=null)
-               .filter(vehicle->vehicle.getPrice() > price)
-               .count();*/
         }
-            return numberOfCars;
-
-   /* public Vehicle getMostExpensiveVehicle(){
+        return numberOfCars;
+    }
+ /*  public Vehicle getMostExpensiveVehicle(){
         Vehicle mostExpensiveVehicle;
         for (int i = 0; i <vehicles.length; i++){
             if (vehicles[i])!=null){
@@ -50,23 +45,19 @@ public class Garage {
             }
         }
     }
-    return mostExpensiveVehicle
-
-
-            public int getHighestPrice ( int price){
+    return mostExpensiveVehicle;
+   } */
+            public int getHighestPrice(int price){
                 int highestPrice = 0;
                 for (int i = 0; i <= vehicles.length - 1; i++) {
                     if (vehicles[i] != null && vehicles[i].getPrice() > highestPrice) {
                         highestPrice = vehicles[i].getPrice();
-
                     }
-                    // System.out.println(Arrays.toString(vehicles));
-
                 }
                 return highestPrice;
             }
 
-            public String getMostExpensiveVehicle (Vehicle tempVehicle){
+            public String getMostExpensiveVehicle(Vehicle tempVehicle){
                 // Vehicle tempVehicle = new Vehicle("Porsche", "Snabb");
                 //  tempVehicle.setPrice(100);
 
@@ -79,5 +70,4 @@ public class Garage {
                 }
                 return tempVehicle.getMake();
             }
-        }*/
-    }}
+        }
