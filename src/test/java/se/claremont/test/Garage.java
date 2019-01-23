@@ -1,9 +1,12 @@
 package se.claremont.test;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.List;
 
 public class Garage {
     Vehicle[] vehicles = new Vehicle[10];
+    //List<Vehicle> vehicles2 = new Array
     String address;
 
     public Garage(String address){
@@ -24,37 +27,57 @@ public class Garage {
 
     public int getNumberOfCarsWithValueOver(int price) {
         int numberOfCars = 0;
-        for (int i = 0; i <= vehicles.length-1; i++) {
+
+        // List<Vehicle> apa = Array.asList(vehicles);
+        for (int i = 0; i <= vehicles.length - 1; i++) {
             if (vehicles[i] != null && vehicles[i].getPrice() > price) {
                 numberOfCars++;
             }
+            //Överkurs Streams, för att iterera över en lista:
+     /*  return(int) Arrays.stream(vehicles)
+               .filter(vehicle->vehicle!=null)
+               .filter(vehicle->vehicle.getPrice() > price)
+               .count();*/
         }
-        return numberOfCars;
-    }
+            return numberOfCars;
 
-    public int getHighestPrice(int price){
-        int highestPrice = 0;
-        for (int i = 0; i <= vehicles.length -1; i++){
-            if (vehicles[i] != null && vehicles[i].getPrice() > highestPrice) {
-                highestPrice= vehicles[i].getPrice();
-
-            }
-          // System.out.println(Arrays.toString(vehicles));
-
-        } return highestPrice;
-    }
-
-    public String getMostExpensiveVehicle(Vehicle tempVehicle){
-       // Vehicle tempVehicle = new Vehicle("Porsche", "Snabb");
-      //  tempVehicle.setPrice(100);
-
-        for (int i = 0; i <= vehicles.length -1; i++){
-            if (vehicles[i] != null && vehicles[i].getPrice() > tempVehicle.getPrice()) {
-                tempVehicle.setPrice(vehicles[i].getPrice());
-                tempVehicle.setMake(vehicles[i].getMake());
-                tempVehicle.setModel(vehicles[i].getModel());
+   /* public Vehicle getMostExpensiveVehicle(){
+        Vehicle mostExpensiveVehicle;
+        for (int i = 0; i <vehicles.length; i++){
+            if (vehicles[i])!=null){
+                if(mostExpensiveVehicle == null || vehicles[i]).getPrice())>mostExpensiveVehicle){
+                mostExpensiveVehicle=vehicles[i];
             }
         }
-        return tempVehicle.getMake();
     }
-}
+    return mostExpensiveVehicle
+
+
+            public int getHighestPrice ( int price){
+                int highestPrice = 0;
+                for (int i = 0; i <= vehicles.length - 1; i++) {
+                    if (vehicles[i] != null && vehicles[i].getPrice() > highestPrice) {
+                        highestPrice = vehicles[i].getPrice();
+
+                    }
+                    // System.out.println(Arrays.toString(vehicles));
+
+                }
+                return highestPrice;
+            }
+
+            public String getMostExpensiveVehicle (Vehicle tempVehicle){
+                // Vehicle tempVehicle = new Vehicle("Porsche", "Snabb");
+                //  tempVehicle.setPrice(100);
+
+                for (int i = 0; i <= vehicles.length - 1; i++) {
+                    if (vehicles[i] != null && vehicles[i].getPrice() > tempVehicle.getPrice()) {
+                        tempVehicle.setPrice(vehicles[i].getPrice());
+                        tempVehicle.setMake(vehicles[i].getMake());
+                        tempVehicle.setModel(vehicles[i].getModel());
+                    }
+                }
+                return tempVehicle.getMake();
+            }
+        }*/
+    }}
