@@ -8,15 +8,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import se.claremont.test.Pages.FirstRepoPage;
 import se.claremont.test.Pages.RepoListPage;
 import se.claremont.test.Pages.UserRepoMenu;
-
 import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 
 public class SeleniumTesting {
     WebDriver browser;
-
 
     @Before  //Körs före varje test
     public void setUp(){
@@ -41,6 +40,6 @@ public class SeleniumTesting {
         Assert.assertEquals("Validate that the first repo is called ",
                 "iths-testautomation", listPage.getNameOfFirstRepo());
 
-
+        FirstRepoPage firstRepoPage = new FirstRepoPage();
         }
 }
