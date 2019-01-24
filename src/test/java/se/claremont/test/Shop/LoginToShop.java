@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginToShop {
     WebDriver browser;
+    String email = "slask@apa.se";
+    String password = "slask";
     By loginButton = By.cssSelector("#header > div.nav > div > div > nav > div.header_user_info > a");
     By emailField = By.cssSelector("#email");
     By passwordField = By.cssSelector("#passwd");
@@ -17,8 +19,8 @@ public class LoginToShop {
 
     public void LoginToTheShop(WebDriver browser) throws InterruptedException {
         browser.findElement(loginButton).click();
-        browser.findElement(emailField).sendKeys("slask@apa.se");
-        browser.findElement(passwordField).sendKeys("slask");
+        browser.findElement(emailField).sendKeys(email);
+        browser.findElement(passwordField).sendKeys(password);
         browser.findElement(submitLoginButton).click();
     }
     public String getNameOfMyAccountText(){
