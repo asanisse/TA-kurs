@@ -10,6 +10,7 @@ import se.claremont.test.Pages.UserRepoMenu;
 import se.claremont.test.Shop.DressesMenu;
 import se.claremont.test.Shop.GoToCashout;
 import se.claremont.test.Shop.LoginToShop;
+import se.claremont.test.Shop.SearchItem;
 
 import java.util.concurrent.TimeUnit;
 
@@ -44,5 +45,13 @@ public class ShopTesting {
         Assert.assertEquals("ORDER CONFIRMATION", goToCashout.getConfirmationOrderText());
 
     }
+    @Test
+    public void searchItems() {
+        SearchItem search = new SearchItem(browser);
+        search.searchItem(browser);
+        //search.getSearchText();
+       Assert.assertEquals("SEARCH  \"CHIFFON\"\n" +
+               "2 results have been found.", search.getSearchText());
 
+    }
 }

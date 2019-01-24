@@ -29,6 +29,7 @@ public class GoToCashout {
     }
 
     public String getConfirmationOrderText(){
+
         return browser.findElement(ConfirmOrderTextIdentifier).getText();
     }
 }
