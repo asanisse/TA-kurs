@@ -31,4 +31,9 @@ public class PetStoreClient {
         Pet myPet = mapper.readValue(response.getBody(), Pet.class);
         return myPet;
     }
+
+ /*   public void deletePet(){
+        Unirest.delete("https://petstore.swagger.io/v2/pet/"+id).asString.as
+
+    }*/
 }

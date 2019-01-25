@@ -11,43 +11,30 @@ import se.claremont.test.Vehicle;
 
 import java.io.IOException;
 
+import static se.claremont.test.petStore.TestDataHelper.getPetWithId;
+
 public class PetStoreTest {
 
     @Test
     public void putPetInPetStore () throws UnirestException, JsonProcessingException {
-        String[] photoUrls = {"http://apa.se", "http://apa.fi"};
-        Pet myPet = new Pet();
-        myPet.setId(666);
-        myPet.setName("Fido");
-        myPet.setPhotoUrls(photoUrls);
-
+        //Pet myPet = TestDataHelper.getPetWithIdAndName(667, "Fluffy");
+        Pet myPet = getPetWithId(999);
         new PetStoreClient().putPetInPetStore(myPet);
-
-
 
      /*   HttpResponse<String> response = Unirest.post("https://petstore.swagger.io/v2/pet")
                 .header("Content-Type", "application/json")
                 .body(new ObjectMapper().writeValueAsString(myPet))
         .asString();
-
-        Assert.assertEquals(200, response.getStatus());*/
+    Assert.assertEquals(200, response.getStatus());*/
     }
 
     @Test
-    public void getPetfromStore() throws IOException, UnirestException {
-       /* PetStoreClient restClient = new PetStoreClient();
-       restClient.putPetInPetStore(myPet);
+    public void getPetFromStore() throws IOException, UnirestException {
 
-        */
-
-        String[] photoUrls = {"http://apa.se", "http://apa.fi"};
-        Pet myPet = new Pet();
-        myPet.setId(666);
-        myPet.setName("Fido");
-        myPet.setPhotoUrls(photoUrls);
-
-        Pet myNewPet = new PetStoreClient().getPetFromPetStore(666);
-        Assert.assertEquals("Fido", myNewPet.getName());
+        Pet myPet = TestDataHelper.getPetWithIdAndName(668, "Fluffy"); //TestDataHelper kan importeras också
+        new PetStoreClient().putPetInPetStore(myPet);
+        Pet myNewPet = new PetStoreClient().getPetFromPetStore(668);
+        Assert.assertEquals("Fluffy", myNewPet.getName());
 
     }
     @Test // Förvandla java object till textsträng
