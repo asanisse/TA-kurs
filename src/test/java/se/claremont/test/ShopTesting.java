@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import se.claremont.test.Pages.UserRepoMenu;
 import se.claremont.test.Shop.DressesMenu;
 import se.claremont.test.Shop.GoToCashout;
 import se.claremont.test.Shop.LoginToShop;
