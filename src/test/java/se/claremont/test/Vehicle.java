@@ -12,6 +12,7 @@ public class Vehicle {
         this.make = make;
         this.model = model;
     }
+    public Vehicle(){} //Tom konstruktor för Jackson En tom konstruktor läggs alltid till by default, men har man redan en konstrukor måste denna läggas till
     public int getPrice() {
         return price;
     }
