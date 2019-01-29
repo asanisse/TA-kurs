@@ -22,18 +22,23 @@ public class PetStoreClient {
         Assert.assertEquals(200, response.getStatus());
     }
 
-    public Pet getPetFromPetStore(int id) throws IOException, UnirestException {
+    public Pet getPetFromPetStore(int id, int statusCode) throws IOException, UnirestException {
         HttpResponse<String> response = Unirest.get("https://petstore.swagger.io/v2/pet/"+id)
                 .header("Content-Type", "application/json") //Header behövs egentligen inte här
                 .asString();
-        Assert.assertEquals(200, response.getStatus());
+        Assert.assertEquals(statusCode, response.getStatus());
         ObjectMapper mapper = new ObjectMapper();
         Pet myPet = mapper.readValue(response.getBody(), Pet.class);
         return myPet;
     }
 
- /*   public void deletePet(){
-        Unirest.delete("https://petstore.swagger.io/v2/pet/"+id).asString.as
+   public void deletePet(int id) throws UnirestException {
+       int response = Unirest.delete("https://petstore.swagger.io/v2/pet/"+id).asString().getStatus();
+       Assert.assertEquals(200, response);
+      /* HttpResponse<String> response = Unirest.get("https://petstore.swagger.io/v2/pet/"+id)
+               .header("Content-Type", "application/json") //Header behövs egentligen inte här
+               .asString();
+       Assert.assertEquals(200, response.getStatus());*/
 
-    }*/
+    }
 }

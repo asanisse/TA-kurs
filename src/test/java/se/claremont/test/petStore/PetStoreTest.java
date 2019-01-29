@@ -33,8 +33,24 @@ public class PetStoreTest {
 
         Pet myPet = TestDataHelper.getPetWithIdAndName(668, "Fluffy"); //TestDataHelper kan importeras också
         new PetStoreClient().putPetInPetStore(myPet);
-        Pet myNewPet = new PetStoreClient().getPetFromPetStore(668);
+        Pet myNewPet = new PetStoreClient().getPetFromPetStore(668, 200);
         Assert.assertEquals("Fluffy", myNewPet.getName());
+
+    }
+@Test
+   public void deletePetFromStore() throws IOException, UnirestException {
+        int id = 669;
+        Pet myPet = TestDataHelper.getPetWithIdAndName(id, "Snurre");
+        PetStoreClient myNewPet = new PetStoreClient();
+        myNewPet.putPetInPetStore(myPet);
+    myNewPet.getPetFromPetStore(id, 200);
+        myNewPet.deletePet(id);
+       myNewPet.getPetFromPetStore(id, 404);
+
+   // Assert.assertEquals(200, getPetFromStore().getStatus());
+
+
+
 
     }
     @Test // Förvandla java object till textsträng
